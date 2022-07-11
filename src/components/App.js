@@ -11,7 +11,7 @@ function App() {
       <NavBar isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn}/>
       <HeaderMain />
       <Routes>
-        <Route path="/" element={<TeamPage isLoggedIn={isLoggedIn}/>} />
+        {/* <Route path="/" element={<TeamPage isLoggedIn={isLoggedIn}/>} /> */}
         <Route path="/.Player" element={<Player />} />
         <Route path="/.Hole" element={<Hole />} />
         <Route path="/.Round" element={<Round />} />
@@ -21,6 +21,6 @@ function App() {
     </div>
   );
 }
-}
+
 
 export default App
