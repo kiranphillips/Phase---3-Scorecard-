@@ -1,10 +1,10 @@
-import ScoreCard from "./ScoreCard"
+import Round from "./Round"
 
-function ScoreCard({ score }) {
+function Round({ score }) {
     const {score, golf_course} = score
   
     return (
-      <div id="scoreCard">
+      <div id="round">
             <span class="name">
               {golf_course}
             </span>
@@ -16,4 +16,4 @@ fetch("http://localhost:9292/test")
   .then((data) => console.log(data));
 
 
-export default ScoreCard
+export default Round
