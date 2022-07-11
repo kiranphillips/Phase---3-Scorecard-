@@ -1,0 +1,32 @@
+body {
+  background-image: url('http://www.sppa.com/wp-content/uploads/golf-green2.png');
+  background-size: 100%;
+  color: white
+}
+
+#pin_image {
+  width: 20%;
+  height: 20%;
+}
+
+#scorecard_container {
+  align-content: center;
+  text-align: center;
+}
+
+#login_form {
+  align-content: center;
+  text-align: center;
+  float: right;
+}
+
+table {
+  border: 2px solid rgb(224, 66, 66);
+  width: 200px;
+  height: 100px;
+}
+
+table td {
+  border: 2px solid #000;
+  padding: 15px;
+}
