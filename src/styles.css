@@ -20,10 +20,47 @@ body {
   float: right;
 }
 
+#score_form {
+  border: 2px solid red;
+  margin-left: 20%;
+  margin-right: 20%;
+  margin-top: 5%;
+  color: black;
+  text-align: right;
+}
+
 .data {
   width: 20px;
   text-align: center;
   margin: 1.5px;
   border-radius: 25%;
   border: 1px solid black;
+}
+
+#button {
+  text-align: center;
+}
+
+th {
+  height: 20px;
+  width: 26px;
+  text-align: center;
+  padding-left: 1px;
+}
+
+table {
+  margin-left: 5%;
+}
+
+.dropdown {
+  height: 20px;
+  width: 26px;
+  margin: 1.5px;
+  text-align: center;
+}
+
+select {
+  appearance: none;
+  text-indent: 1px;
+  text-overflow: '';
 }
