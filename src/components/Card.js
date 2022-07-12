@@ -3,6 +3,8 @@ import { useState } from 'react'
 function Card () {
   let totStrokes;
   let totPutts;
+  let totPar;
+
   const [ hole1, setHole1 ] = useState('')
   const [ hole2, setHole2 ] = useState('')
   const [ hole3, setHole3 ] = useState('')
@@ -40,13 +42,53 @@ function Card () {
   const [ putt16, setPutt16 ] = useState('')
   const [ putt17, setPutt17 ] = useState('')
   const [ putt18, setPutt18 ] = useState('')
+  // ---------------------------------------
+  const [ par1, setPar1 ] = useState(3)
+  const [ par2, setPar2 ] = useState(3)
+  const [ par3, setPar3 ] = useState(3)
+  const [ par4, setPar4 ] = useState(3)
+  const [ par5, setPar5 ] = useState(3)
+  const [ par6, setPar6 ] = useState(3)
+  const [ par7, setPar7 ] = useState(3)
+  const [ par8, setPar8 ] = useState(3)
+  const [ par9, setPar9 ] = useState(3)
+  const [ par10, setPar10 ] = useState(3)
+  const [ par11, setPar11 ] = useState(3)
+  const [ par12, setPar12 ] = useState(3)
+  const [ par13, setPar13 ] = useState(3)
+  const [ par14, setPar14 ] = useState(3)
+  const [ par15, setPar15 ] = useState(3)
+  const [ par16, setPar16 ] = useState(3)
+  const [ par17, setPar17 ] = useState(3)
+  const [ par18, setPar18 ] = useState(3)
+  // ------------------------------------
+  const [ fair1, setFair1 ] = useState(false)
+  const [ fair2, setFair2 ] = useState(false)
+  const [ fair3, setFair3 ] = useState(false)
+  const [ fair4, setFair4 ] = useState(false)
+  const [ fair5, setFair5 ] = useState(false)
+  const [ fair6, setFair6 ] = useState(false)
+  const [ fair7, setFair7 ] = useState(false)
+  const [ fair8, setFair8 ] = useState(false)
+  const [ fair9, setFair9 ] = useState(false)
+  const [ fair10, setFair10 ] = useState(false)
+  const [ fair11, setFair11 ] = useState(false)
+  const [ fair12, setFair12 ] = useState(false)
+  const [ fair13, setFair13 ] = useState(false)
+  const [ fair14, setFair14 ] = useState(false)
+  const [ fair15, setFair15 ] = useState(false)
+  const [ fair16, setFair16 ] = useState(false)
+  const [ fair17, setFair17 ] = useState(false)
+  const [ fair18, setFair18 ] = useState(false)
+
 
   const handleSubmit = (e) => {
     e.preventDefault()
     totStrokes = parseInt(hole1) + parseInt(hole2) + parseInt(hole3) + parseInt(hole4) + parseInt(hole5) + parseInt(hole6) + parseInt(hole7) + parseInt(hole8) + parseInt(hole9) + parseInt(hole10) + parseInt(hole11) + parseInt(hole12) + parseInt(hole13) + parseInt(hole14) + parseInt(hole15) + parseInt(hole16) + parseInt(hole17) + parseInt(hole18)
+
     totPutts = parseInt(putt1) + parseInt(putt2) + parseInt(putt3) + parseInt(putt4) + parseInt(putt5) + parseInt(putt6) + parseInt(putt7) + parseInt(putt8) + parseInt(putt9) + parseInt(putt10) + parseInt(putt11) + parseInt(putt12) + parseInt(putt13) + parseInt(putt14) + parseInt(putt15) + parseInt(putt16) + parseInt(putt17) + parseInt(putt18)
-    console.log('Total Strokes -->', totStrokes)
-    console.log('Total Putts -->', totPutts);
+
+    totPar = parseInt(par1) + parseInt(par2) + parseInt(par3) + parseInt(par4) + parseInt(par5) + parseInt(par6) + parseInt(par7) + parseInt(par8) + parseInt(par9) + parseInt(par10) + parseInt(par11) + parseInt(par12) + parseInt(par13) + parseInt(par14) + parseInt(par15) + parseInt(par16) + parseInt(par17) + parseInt(par18)
 
   }
 
@@ -56,25 +98,27 @@ function Card () {
     <div id='score_form'>
       <table>
         <tbody>
-          <th>Hole:</th>
-          <th>1</th>
-          <th>2</th>
-          <th>3</th>
-          <th>4</th>
-          <th>5</th>
-          <th>6</th>
-          <th>7</th>
-          <th>8</th>
-          <th>9</th>
-          <th>10</th>
-          <th>11</th>
-          <th>12</th>
-          <th>13</th>
-          <th>14</th>
-          <th>15</th>
-          <th>16</th>
-          <th>17</th>
-          <th>18</th>
+          <tr>
+            <th>Hole:</th>
+            <th>1</th>
+            <th>2</th>
+            <th>3</th>
+            <th>4</th>
+            <th>5</th>
+            <th>6</th>
+            <th>7</th>
+            <th>8</th>
+            <th>9</th>
+            <th>10</th>
+            <th>11</th>
+            <th>12</th>
+            <th>13</th>
+            <th>14</th>
+            <th>15</th>
+            <th>16</th>
+            <th>17</th>
+            <th>18</th>
+          </tr>
         </tbody>
       </table>
       <form onSubmit={ handleSubmit }>
@@ -101,95 +145,95 @@ function Card () {
         </label>
         <label>
           Par:
-          <select className='dropdown'>
-            <option>3</option>
-            <option>4</option>
-            <option>5</option>
+          <select className='dropdown' value={ par1 } onChange={ e => setPar1(parseInt(e.target.value)) }>
+            <option value='3'>3</option>
+            <option value='4'>4</option>
+            <option value='5'>5</option>
           </select>
-          <select className='dropdown'>
-            <option>3</option>
-            <option>4</option>
-            <option>5</option>
+          <select className='dropdown' value={ par2 } onChange={ e => setPar2(e.target.value) }>
+            <option value='3'>3</option>
+            <option value='4'>4</option>
+            <option value='5'>5</option>
           </select>
-          <select className='dropdown'>
-            <option>3</option>
-            <option>4</option>
-            <option>5</option>
+          <select className='dropdown' value={ par3 } onChange={ e => setPar3(e.target.value) }>
+            <option value='3'>3</option>
+            <option value='4'>4</option>
+            <option value='5'>5</option>
           </select>
-          <select className='dropdown'>
-            <option>3</option>
-            <option>4</option>
-            <option>5</option>
+          <select className='dropdown' value={ par4 } onChange={ e => setPar4(e.target.value) }>
+            <option value='3'>3</option>
+            <option value='4'>4</option>
+            <option value='5'>5</option>
           </select>
-          <select className='dropdown'>
-            <option>3</option>
-            <option>4</option>
-            <option>5</option>
+          <select className='dropdown' value={ par5 } onChange={ e => setPar5(e.target.value) }>
+            <option value='3'>3</option>
+            <option value='4'>4</option>
+            <option value='5'>5</option>
           </select>
-          <select className='dropdown'>
-            <option>3</option>
-            <option>4</option>
-            <option>5</option>
+          <select className='dropdown' value={ par6 } onChange={ e => setPar6(e.target.value) }>
+            <option value='3'>3</option>
+            <option value='4'>4</option>
+            <option value='5'>5</option>
           </select>
-          <select className='dropdown'>
-            <option>3</option>
-            <option>4</option>
-            <option>5</option>
+          <select className='dropdown' value={ par7 } onChange={ e => setPar7(e.target.value) }>
+            <option value='3'>3</option>
+            <option value='4'>4</option>
+            <option value='5'>5</option>
           </select>
-          <select className='dropdown'>
-            <option>3</option>
-            <option>4</option>
-            <option>5</option>
+          <select className='dropdown' value={ par8 } onChange={ e => setPar8(e.target.value) }>
+            <option value='3'>3</option>
+            <option value='4'>4</option>
+            <option value='5'>5</option>
           </select>
-          <select className='dropdown'>
-            <option>3</option>
-            <option>4</option>
-            <option>5</option>
+          <select className='dropdown' value={ par9 } onChange={ e => setPar9(e.target.value) }>
+            <option value='3'>3</option>
+            <option value='4'>4</option>
+            <option value='5'>5</option>
           </select>
-          <select className='dropdown'>
-            <option>3</option>
-            <option>4</option>
-            <option>5</option>
+          <select className='dropdown' value={ par10 } onChange={ e => setPar10(e.target.value) }>
+            <option value='3'>3</option>
+            <option value='4'>4</option>
+            <option value='5'>5</option>
           </select>
-          <select className='dropdown'>
-            <option>3</option>
-            <option>4</option>
-            <option>5</option>
+          <select className='dropdown' value={ par11 } onChange={ e => setPar11(e.target.value) }>
+            <option value='3'>3</option>
+            <option value='4'>4</option>
+            <option value='5'>5</option>
           </select>
-          <select className='dropdown'>
-            <option>3</option>
-            <option>4</option>
-            <option>5</option>
+          <select className='dropdown' value={ par12 } onChange={ e => setPar12(e.target.value) }>
+            <option value='3'>3</option>
+            <option value='4'>4</option>
+            <option value='5'>5</option>
           </select>
-          <select className='dropdown'>
-            <option>3</option>
-            <option>4</option>
-            <option>5</option>
+          <select className='dropdown' value={ par13 } onChange={ e => setPar13(e.target.value) }>
+            <option value='3'>3</option>
+            <option value='4'>4</option>
+            <option value='5'>5</option>
           </select>
-          <select className='dropdown'>
-            <option>3</option>
-            <option>4</option>
-            <option>5</option>
+          <select className='dropdown' value={ par14 } onChange={ e => setPar14(e.target.value) }>
+            <option value='3'>3</option>
+            <option value='4'>4</option>
+            <option value='5'>5</option>
           </select>
-          <select className='dropdown'>
-            <option>3</option>
-            <option>4</option>
-            <option>5</option>
+          <select className='dropdown' value={ par15 } onChange={ e => setPar15(e.target.value) }>
+            <option value='3'>3</option>
+            <option value='4'>4</option>
+            <option value='5'>5</option>
           </select>
-          <select className='dropdown'>
-            <option>3</option>
-            <option>4</option>
-            <option>5</option>
+          <select className='dropdown' value={ par16 } onChange={ e => setPar16(e.target.value) }>
+            <option value='3'>3</option>
+            <option value='4'>4</option>
+            <option value='5'>5</option>
           </select>
-          <select className='dropdown'>
-            <option>3</option>
-            <option>4</option>
-            <option>5</option>
+          <select className='dropdown' value={ par17 } onChange={ e => setPar17(e.target.value) }>
+            <option value='3'>3</option>
+            <option value='4'>4</option>
+            <option value='5'>5</option>
           </select>
-          <select className='dropdown'>
-            <option>3</option>
-            <option>4</option>
-            <option>5</option>
+          <select className='dropdown' value={ par18 } onChange={ e => setPar18(e.target.value) }>
+            <option value='3'>3</option>
+            <option value='4'>4</option>
+            <option value='5'>5</option>
           </select>
         </label>
         <label>
@@ -215,77 +259,77 @@ function Card () {
         </label>
         <label>
           Fairway:
-          <select className='dropdown'>
-            <option value={ true }>✅</option>
-            <option value={ false }>❌</option>
+          <select className='dropdown' value={ fair1 } onChange={ e => setFair1(e.target.value === 'true') }>
+            <option value='true'>✅</option>
+            <option value='false'>❌</option>
           </select>
-          <select className='dropdown'>
-            <option value={ true }>✅</option>
-            <option value={ false }>❌</option>
+          <select className='dropdown' value={ fair2 } onChange={ e => setFair2(e.target.value === 'true') }>
+            <option value='true'>✅</option>
+            <option value='false'>❌</option>
           </select>
-          <select className='dropdown'>
-            <option value={ true }>✅</option>
-            <option value={ false }>❌</option>
+          <select className='dropdown' value={ fair3 } onChange={ e => setFair3(e.target.value === 'true') }>
+            <option value='true'>✅</option>
+            <option value='false'>❌</option>
           </select>
-          <select className='dropdown'>
-            <option value={ true }>✅</option>
-            <option value={ false }>❌</option>
+          <select className='dropdown' value={ fair4 } onChange={ e => setFair4(e.target.value === 'true') }>
+            <option value='true'>✅</option>
+            <option value='false'>❌</option>
           </select>
-          <select className='dropdown'>
-            <option value={ true }>✅</option>
-            <option value={ false }>❌</option>
+          <select className='dropdown' value={ fair5 } onChange={ e => setFair5(e.target.value === 'true') }>
+            <option value='true'>✅</option>
+            <option value='false'>❌</option>
           </select>
-          <select className='dropdown'>
-            <option value={ true }>✅</option>
-            <option value={ false }>❌</option>
+          <select className='dropdown' value={ fair6 } onChange={ e => setFair6(e.target.value === 'true') }>
+            <option value='true'>✅</option>
+            <option value='false'>❌</option>
           </select>
-          <select className='dropdown'>
-            <option value={ true }>✅</option>
-            <option value={ false }>❌</option>
+          <select className='dropdown' value={ fair7 } onChange={ e => setFair7(e.target.value === 'true') }>
+            <option value='true'>✅</option>
+            <option value='false'>❌</option>
           </select>
-          <select className='dropdown'>
-            <option value={ true }>✅</option>
-            <option value={ false }>❌</option>
+          <select className='dropdown' value={ fair8 } onChange={ e => setFair8(e.target.value === 'true') }>
+            <option value='true'>✅</option>
+            <option value='false'>❌</option>
           </select>
-          <select className='dropdown'>
-            <option value={ true }>✅</option>
-            <option value={ false }>❌</option>
+          <select className='dropdown' value={ fair9 } onChange={ e => setFair9(e.target.value === 'true') }>
+            <option value='true'>✅</option>
+            <option value='false'>❌</option>
           </select>
-          <select className='dropdown'>
-            <option value={ true }>✅</option>
-            <option value={ false }>❌</option>
+          <select className='dropdown' value={ fair10 } onChange={ e => setFair10(e.target.value === 'true') }>
+            <option value='true'>✅</option>
+            <option value='false'>❌</option>
           </select>
-          <select className='dropdown'>
-            <option value={ true }>✅</option>
-            <option value={ false }>❌</option>
+          <select className='dropdown' value={ fair11 } onChange={ e => setFair11(e.target.value === 'true') }>
+            <option value='true'>✅</option>
+            <option value='false'>❌</option>
           </select>
-          <select className='dropdown'>
-            <option value={ true }>✅</option>
-            <option value={ false }>❌</option>
+          <select className='dropdown' value={ fair12 } onChange={ e => setFair12(e.target.value === 'true') }>
+            <option value='true'>✅</option>
+            <option value='false'>❌</option>
           </select>
-          <select className='dropdown'>
-            <option value={ true }>✅</option>
-            <option value={ false }>❌</option>
+          <select className='dropdown' value={ fair13 } onChange={ e => setFair13(e.target.value === 'true') }>
+            <option value='true'>✅</option>
+            <option value='false'>❌</option>
           </select>
-          <select className='dropdown'>
-            <option value={ true }>✅</option>
-            <option value={ false }>❌</option>
+          <select className='dropdown' value={ fair14 } onChange={ e => setFair14(e.target.value === 'true') }>
+            <option value='true'>✅</option>
+            <option value='false'>❌</option>
           </select>
-          <select className='dropdown'>
-            <option value={ true }>✅</option>
-            <option value={ false }>❌</option>
+          <select className='dropdown' value={ fair15 } onChange={ e => setFair15(e.target.value === 'true') }>
+            <option value='true'>✅</option>
+            <option value='false'>❌</option>
           </select>
-          <select className='dropdown'>
-            <option value={ true }>✅</option>
-            <option value={ false }>❌</option>
+          <select className='dropdown' value={ fair16 } onChange={ e => setFair16(e.target.value === 'true') }>
+            <option value='true'>✅</option>
+            <option value='false'>❌</option>
           </select>
-          <select className='dropdown'>
-            <option value={ true }>✅</option>
-            <option value={ false }>❌</option>
+          <select className='dropdown' value={ fair17 } onChange={ e => setFair17(e.target.value === 'true') }>
+            <option value='true'>✅</option>
+            <option value='false'>❌</option>
           </select>
-          <select className='dropdown'>
-            <option value={ true }>✅</option>
-            <option value={ false }>❌</option>
+          <select className='dropdown' value={ fair18 } onChange={ e => setFair18(e.target.value === 'true') }>
+            <option value='true'>✅</option>
+            <option value='false'>❌</option>
           </select>
         </label>
         <button id="button" type="submit">Submit Score</button>
