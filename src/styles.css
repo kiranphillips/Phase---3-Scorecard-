@@ -20,13 +20,10 @@ body {
   float: right;
 }
 
-table {
-  border: 2px solid rgb(224, 66, 66);
-  width: 200px;
-  height: 100px;
-}
-
-table td {
-  border: 2px solid #000;
-  padding: 15px;
+.data {
+  width: 20px;
+  text-align: center;
+  margin: 1.5px;
+  border-radius: 25%;
+  border: 1px solid black;
 }
