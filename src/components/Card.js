@@ -5,6 +5,10 @@ function Card () {
   let totPutts;
   let totPar;
 
+  const [ course, setCourse ] = useState('')
+  const [ date, setDate ] = useState('')
+
+
   const [ hole1, setHole1 ] = useState('')
   const [ hole2, setHole2 ] = useState('')
   const [ hole3, setHole3 ] = useState('')
@@ -89,13 +93,25 @@ function Card () {
     totPutts = parseInt(putt1) + parseInt(putt2) + parseInt(putt3) + parseInt(putt4) + parseInt(putt5) + parseInt(putt6) + parseInt(putt7) + parseInt(putt8) + parseInt(putt9) + parseInt(putt10) + parseInt(putt11) + parseInt(putt12) + parseInt(putt13) + parseInt(putt14) + parseInt(putt15) + parseInt(putt16) + parseInt(putt17) + parseInt(putt18)
 
     totPar = parseInt(par1) + parseInt(par2) + parseInt(par3) + parseInt(par4) + parseInt(par5) + parseInt(par6) + parseInt(par7) + parseInt(par8) + parseInt(par9) + parseInt(par10) + parseInt(par11) + parseInt(par12) + parseInt(par13) + parseInt(par14) + parseInt(par15) + parseInt(par16) + parseInt(par17) + parseInt(par18)
-
+console.log(course)
+console.log(date)
   }
 
 
 
   return (
-    <div id='score_form'>
+    <>
+    <form  onSubmit= {handleSubmit}>
+    <label>Golf Course Name:
+      <input value={ course } onChange={ e => setCourse(e.target.value) } placeholder='Enter Course Name' className='course'></input>
+      </label>
+    </form> 
+    <form  onSubmit= {handleSubmit}>
+    <label>Date:
+      <input value={ date } onChange={ e => setDate(e.target.value) } placeholder='mm/dd/yy' className='date'></input>
+      </label>
+    </form> 
+    <div id='score_form'> 
       <table>
         <tbody>
           <tr>
@@ -335,6 +351,8 @@ function Card () {
         <button id="button" type="submit">Submit Score</button>
       </form>
     </div>
+
+    </>
   )
 }
 

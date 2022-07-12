@@ -22,8 +22,10 @@ body {
 
 #score_form {
   border: 2px solid red;
-  margin-left: 20%;
-  margin-right: 20%;
+  height: 170px;
+  width: 580px;
+  margin-left: auto;
+  margin-right: auto;
   margin-top: 5%;
   color: black;
   text-align: right;
@@ -63,4 +65,11 @@ select {
   appearance: none;
   text-indent: 1px;
   text-overflow: '';
+}
+
+
+
+.course, .date {
+  display: block;
+  margin: auto;
 }
