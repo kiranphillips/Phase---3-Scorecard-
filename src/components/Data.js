@@ -1,8 +1,9 @@
 function Data () {
-    return (
-
-            <h1> Hello </h1>
-      )
+  return (
+    <div>
+      <h1> Add Data Here? </h1>
+    </div>
+  )
 }
 
 export default Data
