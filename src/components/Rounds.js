@@ -1,4 +1,4 @@
-function Data () {
+function Rounds () {
   return (
     <div>
       <h1> Add Data Here? </h1>
@@ -6,4 +6,4 @@ function Data () {
   )
 }
 
-export default Data
+export default Rounds
