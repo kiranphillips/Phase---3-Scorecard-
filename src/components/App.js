@@ -7,7 +7,7 @@ import Scores from "./Scores";
 import Rounds from "./Rounds";
 
 import RouterButton from './RouterButton';
-import Rounds from './Rounds';
+
 
 
 function App () {
@@ -24,7 +24,6 @@ function App () {
       </Routes>
       <RouterButton />
       <Rounds 
-      rounds={rounds}
       />
     </div>
   );

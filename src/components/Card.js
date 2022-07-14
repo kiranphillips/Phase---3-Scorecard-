@@ -98,24 +98,28 @@ function Card ( {onAddRound} ) {
     console.log(totStrokes)
   }
 
-  function handleAddRound(e) {
-    e.preventDefault();
+  // function handleAddScores(e) {
+  //   e.preventDefault();
 
-    fetch("http://localhost:9292/rounds", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        // player_id: username,
-        round_date: date,
-      }),
-    })
-      .then((r) => r.json())
-      .then((newRound) => {
-        onAddRound(newRound);
-      });
-  }
+  //   fetch("http://localhost:9292/hole_scores", {
+  //     method: "POST",
+  //     headers: {
+  //       "Content-Type": "application/json",
+  //     },
+  //     body: JSON.stringify({
+  //       hole_num: ,
+  //       par: ,
+  //       num_strokes: ,
+  //       num_putts: ,
+  //       fairway_hit: ,
+  //       round_date: date,
+  //     }),
+  //   })
+  //     .then((r) => r.json())
+  //     .then((newRound) => {
+  //       onAddRound(newRound);
+  //     });
+  // }
 
 
 
