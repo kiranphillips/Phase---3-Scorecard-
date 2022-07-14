@@ -1,72 +1,19 @@
-import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
-
-function Login({ setIsLoggedIn }) {
-  const history = useNavigate();
-  const [formData, setFormData] = useState({
-    username: "",
-    dob: "",
-  });
-
-  function handleChange(e) {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value,
-    });
-  }
-
-  function handleSubmit(e) {
-    e.preventDefault();
-    // fetch("http://localhost:3001/.Login", {
-    //   method: "POST",
-    //   headers: {
-    //     "Content-Type": "application/json",
-    //   },
-    //   body: JSON.stringify(formData),
-    // })
-    //   .then((r) => r.json())
-    //   .then((user) => {
-        setIsLoggedIn(true);
-
-    history("/");
-//   })
-}
-
+function LogIn () {
   return (
-    <div id="login">
-    <form widths="equal" onSubmit={handleSubmit}>
-     
-      <h3 id="logincolor"> Login</h3>
-      <div className="mb-3">
-        {/* <label className="label">Username</label> */}
-        <input
-            className="input"
-            type="text"
-            name="username"
-            placeholder="Username"
-            fluid label="username"
-            value={formData.username}
-            onChange={handleChange}
-        />
-      </div>
-      <div className="mb-3">
-        {/* <label className="label">Password</label> */}
-        <input
-            className="input"
-            type="dob"
-            name="dob"
-            placeholder="Password"
-            value={formData.dob}
-            onChange={handleChange}
-        />
-      </div>
-      <div className="d-grid">
-        <button className="login button" type="submit">Login</button>
-      </div>
-    </form>
-  </div>
-  );
-}
+    <div id="login_form">
+      <form>
+        <label>
+          Username:
+          <input></input>
+        </label>
+        <label>
+          Password:
+          <input></input>
+        </label>
+        <button className='login_button' type="submit">Login</button>
+      </form>
+    </div>
+  )
+};
 
-
-export default Login;
+export default LogIn
