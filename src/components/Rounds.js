@@ -1,19 +1,11 @@
-import Scores from "./Scores"
 
-function Rounds ( {rounds} ) {
+import RoundsContainer from './RoundsContainer';
 
+function Rounds () {
 
   return (
     <div>
-      <h1> Add Data Here? </h1>
-        <ul>
-          {rounds.map((round) => (
-            <Scores 
-            key={round.id}
-            round={round}
-            />
-          ))}
-        </ul>
+      <RoundsContainer />
     </div>
   )
 }

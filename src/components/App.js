@@ -2,25 +2,15 @@ import React from "react";
 import { Routes, Route } from "react-router-dom";
 import Header from './Header';
 import ScoreCard from './ScoreCard'
+
 import Scores from "./Scores";
 import Rounds from "./Rounds";
+
 import RouterButton from './RouterButton';
-import { useEffect, useState } from "react";
+import Rounds from './Rounds';
 
 
 function App () {
-  const [rounds, setRounds] = useState([])
-
-  useEffect(() => {
-    fetch("http://localhost:9292/rounds")
-    .then((r) => r.json())
-    .then((rounds) => setRounds(rounds));
-}, []);
-
-
-function handleAddRound(newRound) {
-  setRounds(...rounds, newRound)
-}
 
 
 
@@ -28,7 +18,9 @@ function handleAddRound(newRound) {
     <div>
       <Header />
       <Routes>
-        <Route path="/" element={ <ScoreCard onAddRound={handleAddRound}/> } />
+
+        <Route path="/" element={ <ScoreCard /> } />
+        <Route path="/rounds" element={ <Rounds /> } />
       </Routes>
       <RouterButton />
       <Rounds 
