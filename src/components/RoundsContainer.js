@@ -1,8 +1,9 @@
 import { useState, useEffect } from 'react'
+import PlayerData from './PlayerData';
 
 function RoundsContainer () {
-  const [ rounds, setRounds ] = useState('')
-  const [ players, setPlayers ] = useState('')
+  const [ rounds, setRounds ] = useState([])
+  const [ players, setPlayers ] = useState([])
   // -----------------------------
   useEffect(() => {
     fetch("http://localhost:9292/players")
@@ -16,12 +17,10 @@ function RoundsContainer () {
       .then((rounds) => setRounds(rounds));
   }, []);
   // -----------------------------
-  console.log('Players -->', players);
-  console.log('Rounds --->', rounds);
 
   return (
     <div id="rounds_div">
-
+      <PlayerData players={ players } rounds={ rounds } />
     </div>
   )
 }
