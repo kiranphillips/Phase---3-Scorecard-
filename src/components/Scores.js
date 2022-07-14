@@ -1,8 +1,12 @@
-function Scores (){
+function Scores ( {round} ){
 
-<button className='login_button' type="submit">Access All Scores</button>
+return (
+    
+    <li>
+        <p>{round}</p>
+    </li>
 
-
+)
 }
 
 export default Scores
