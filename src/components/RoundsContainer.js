@@ -2,8 +2,8 @@ import { useState, useEffect } from 'react'
 import PlayerData from './PlayerData';
 
 function RoundsContainer () {
-  const [ rounds, setRounds ] = useState('')
-  const [ players, setPlayers ] = useState('')
+  const [ rounds, setRounds ] = useState([])
+  const [ players, setPlayers ] = useState([])
   // -----------------------------
   useEffect(() => {
     fetch("http://localhost:9292/players")

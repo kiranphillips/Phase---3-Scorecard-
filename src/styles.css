@@ -104,7 +104,6 @@ select {
 }
 
 #rounds_div {
-  border: solid black ;
   width: 500px;
   height: 200px;
   margin-left: auto;
@@ -113,10 +112,18 @@ select {
 
 #player_table {
   margin: auto;
+  table-layout: fixed;
+  width: 100%;
+  border-collapse: collapse;
+  border: 3px solid rgb(255, 0, 0);
   text-align: center;
-  border: solid black;
+}
+.content_row {
+  font-size: large;
+  color: rgb(255, 0, 0);
+  border: solid black
 }
 
-.player_rows {
-  border: solid black
+.round_button {
+  border-radius: 20em;
 }
