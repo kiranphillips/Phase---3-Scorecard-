@@ -1,6 +1,6 @@
 import { useState } from 'react'
 
-function Card () {
+function Card ( {onAddRound} ) {
   let totStrokes;
   let totPutts;
   let totPar;
@@ -96,6 +96,25 @@ function Card () {
     console.log(course)
     console.log(date)
     console.log(totStrokes)
+  }
+
+  function handleAddRound(e) {
+    e.preventDefault();
+
+    fetch("http://localhost:9292/rounds", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        // player_id: username,
+        round_date: date,
+      }),
+    })
+      .then((r) => r.json())
+      .then((newRound) => {
+        onAddRound(newRound);
+      });
   }
 
 
