@@ -1,7 +1,10 @@
+import RoundsContainer from './RoundsContainer';
+
 function Rounds () {
+
   return (
     <div>
-      <h1> Add Data Here? </h1>
+      <RoundsContainer />
     </div>
   )
 }

@@ -95,6 +95,7 @@ function Card () {
     totPar = parseInt(par1) + parseInt(par2) + parseInt(par3) + parseInt(par4) + parseInt(par5) + parseInt(par6) + parseInt(par7) + parseInt(par8) + parseInt(par9) + parseInt(par10) + parseInt(par11) + parseInt(par12) + parseInt(par13) + parseInt(par14) + parseInt(par15) + parseInt(par16) + parseInt(par17) + parseInt(par18)
     console.log(course)
     console.log(date)
+    console.log(totStrokes)
   }
 
 
