@@ -1,12 +1,7 @@
-function Scores ( {round} ){
+function Scores () {
 
-return (
-    
-    <li>
-        <p>{round}</p>
-    </li>
+    // return (
 
-)
 }
 
 export default Scores
