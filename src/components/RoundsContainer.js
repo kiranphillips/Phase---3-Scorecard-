@@ -11,12 +11,18 @@ function RoundsContainer () {
       .then((players) => setPlayers(players));
   }, []);
 
-  // console.log(players)
+  function handleDeletePlayer(id) {
+    const updatedPlayers = players.filter((player) => player.id !== id);
+    setPlayers(updatedPlayers);
+  }
+
+
 
   const playerInfo = players.map((player) =>
     <PlayerData
       key={ player.id }
       player={ player }
+      onDeletePlayer = {handleDeletePlayer} 
     />
   )
 

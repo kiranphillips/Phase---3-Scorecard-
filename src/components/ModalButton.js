@@ -58,7 +58,6 @@ function ModalButton ({ scores, player, onScoreDelete }) {
       fetch(`http://localhost:9292/score_totals/${id}`, {
         method: "DELETE",
       });
-      console.log(id)
       onScoreDelete(id);
     }
     if (score.player_id === player.id)
@@ -81,8 +80,9 @@ function ModalButton ({ scores, player, onScoreDelete }) {
               <td>{ total_putts }</td>
               <td>{ fairways_hit }</td>
             </tr>
+            <button key={id} className='round_button'>edit round</button>
+            <button key={id} className='round_button' onClick={handleDeleteClick}>delete round</button>
           </tbody>
-          <button key={id} className='round_button' onClick={handleDeleteClick}>delete</button>
         </table>
       )
   })
@@ -90,7 +90,7 @@ function ModalButton ({ scores, player, onScoreDelete }) {
   return (
     <>
       <Button key={ id } className="round_button" variant="primary" onClick={ handleShow }>
-        View
+        view rounds
       </Button>
 
       <Modal className="onshow" show={ show } onHide={ handleClose }>
