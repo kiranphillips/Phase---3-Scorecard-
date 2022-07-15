@@ -4,10 +4,10 @@ import Button from 'react-bootstrap/Button';
 
 function ModalButton ({ scores, player }) {
   const [ show, setShow ] = useState(false);
-  const { score_to_par, strokes, total_putts, course_name, round_date, fairways_hit,} = scores
-  const {id, username} = player
+  const { score_to_par, strokes, total_putts, course_name, round_date, fairways_hit, } = scores
+  const { id, username } = player
 
-  console.log(scores)
+  // console.log(scores)
   // console.log(scores[ 0 ].score_to_par)
 
   // const totalStrokes = scores.map(score => <td>{ score.strokes }</td>)
@@ -47,33 +47,33 @@ function ModalButton ({ scores, player }) {
   }
 
   const renderScores = scores.map((score) =>
-  <table>
-            <tbody>
-              <tr>
-                <th className='modal_th'>Round Date</th>
-                <th className='modal_th'>Course Name</th>
-                <th className='modal_th'>Total Strokes</th>
-                <th className='modal_th'>Score to Par</th>
-                <th className='modal_th'>Total Putts</th>
-                <th className='modal_th'>Fairways Hit</th>
-                <th className='modal_th'>Player ID</th>
-              </tr>
-              <tr>
-                <td>{ score.round_date }</td>
-                <td>{ score.course_name }</td>
-                <td>{ score.strokes }</td>
-                <td>{ score.score_to_par }</td>
-                <td>{ score.total_putts }</td>
-                <td>{ score.fairways_hit }</td>
-                <td>{score.player_id}</td>
-              </tr>
-            </tbody>
-          </table>
+    <table>
+      <tbody>
+        <tr>
+          <th className='modal_th'>Round Date</th>
+          <th className='modal_th'>Course Name</th>
+          <th className='modal_th'>Total Strokes</th>
+          <th className='modal_th'>Score to Par</th>
+          <th className='modal_th'>Total Putts</th>
+          <th className='modal_th'>Fairways Hit</th>
+          <th className='modal_th'>Player ID</th>
+        </tr>
+        <tr>
+          <td>{ score.round_date }</td>
+          <td>{ score.course_name }</td>
+          <td>{ score.strokes }</td>
+          <td>{ score.score_to_par }</td>
+          <td>{ score.total_putts }</td>
+          <td>{ score.fairways_hit }</td>
+          <td>{ score.player_id }</td>
+        </tr>
+      </tbody>
+    </table>
   )
 
   return (
     <>
-      <Button key={id} className="round_button" variant="primary" onClick={ handleShow }>
+      <Button key={ id } className="round_button" variant="primary" onClick={ handleShow }>
         View
       </Button>
 
@@ -82,7 +82,7 @@ function ModalButton ({ scores, player }) {
           <Modal.Title>Round Totals:</Modal.Title>
         </Modal.Header>
         <Modal.Body>
-          {renderScores}
+          { renderScores }
         </Modal.Body>
         <Modal.Footer>
           <Button variant="secondary" onClick={ handleClose }>
