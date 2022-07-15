@@ -28,6 +28,16 @@ function ModalButton ({ scores }) {
   // const firstRoundPar = holesArray.map(hole => {
   //   return <th>{ hole.par }</th>
   // })
+  // const tracker = {
+  //   hole: 1,
+  //   strokes: 0,
+  //   putts: 0,
+  //   fairHit: 0,
+  //   par: 0
+  // }
+
+  // const [ stats, setStats ] = useState(tracker)
+  // console.log(stats);
 
   const handleClose = () => setShow(false);
   const handleShow = () => {

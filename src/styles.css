@@ -22,13 +22,13 @@ body {
 
 #score_form {
   border: 2px solid red;
-  height: 170px;
+  height: 210px;
   width: 580px;
   margin-left: auto;
   margin-right: auto;
   margin-top: 5%;
   color: black;
-  text-align: right;
+  text-align: center;
 }
 
 .data {
@@ -41,7 +41,7 @@ body {
 
 #button {
   text-align: center;
-  text-decoration: none;
+  margin-top: 10px;
 }
 
 th {
@@ -160,4 +160,12 @@ a, a:hover, a:focus, a:active {
 .modal_th {
   white-space: nowrap;
   padding: 10px;
+}
+
+.entry_data {
+  padding-top: 5px;
+}
+
+label {
+  margin: 10px
 }
