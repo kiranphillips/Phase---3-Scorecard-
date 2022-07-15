@@ -1,5 +1,6 @@
 
 import RoundsContainer from './RoundsContainer';
+import RouterButton from './RouterButton';
 import { BrowserRouter as Router, Link } from 'react-router-dom'
 
 function Rounds () {
@@ -10,7 +11,6 @@ function Rounds () {
       <Link to='/'>
       <button id="router_button">Back</button>
       </Link>
-  )
     </div>
   )
 }
