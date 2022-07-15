@@ -11,16 +11,18 @@ function RoundsContainer () {
       .then((players) => setPlayers(players));
   }, []);
 
-  useEffect(() => {
-    fetch("http://localhost:9292/rounds")
-      .then((r) => r.json())
-      .then((rounds) => setRounds(rounds));
-  }, []);
-  // -----------------------------
+  console.log(players)
+
+  const playerInfo = players.map((player) =>
+    <PlayerData
+    key={player.id}
+    player={player} 
+    />
+  )
 
   return (
     <div id="rounds_div">
-      <PlayerData players={ players } rounds={ rounds } />
+      {playerInfo}
     </div>
   )
 }
