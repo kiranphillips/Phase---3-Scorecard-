@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react'
 import Rounds from './Rounds'
 
-function HoleScores ( {onAddRound} ) {
+function HoleScores ({ onAddRound }) {
 
   const [ formData, setFormData] = useState({
         course_name: "",
@@ -12,17 +12,19 @@ function HoleScores ( {onAddRound} ) {
         total_putts: "",
         fairways_hit: "",
 
-})
+
+  })
 
 function handleChange(e) {
     console.log(formData.username)
-    setFormData({
-        ...formData,
-        [e.target.name]: e.target.value
-    })
-}
 
-  function handleSubmit(e) {
+    setFormData({
+      ...formData,
+      [ e.target.name ]: e.target.value
+    })
+  }
+
+  function handleSubmit (e) {
     e.preventDefault();
 
     const new_player = {
@@ -53,36 +55,36 @@ function handleChange(e) {
 
 
   return (
-      <div id='score_form'>
-        <form onSubmit={handleSubmit}>
+    <div id='score_form'>
+      <form onSubmit={ handleSubmit }>
         <label>Golf Course Name:
-          <input name="courseName" value={formData.courseName} onChange={handleChange} placeholder='Enter Course Name' className='course'></input>
+          <input name="courseName" value={ formData.courseName } onChange={ handleChange } placeholder='Enter Course Name' className='course'></input>
         </label>
         <label>Date:
-          <input  name="roundDate" value={formData.roundDate} onChange={handleChange} placeholder='mm/dd/yyyy' className='date'></input>
+          <input name="roundDate" value={ formData.roundDate } onChange={ handleChange } placeholder='mm/dd/yyyy' className='date'></input>
         </label>
         <label>Player:
           <input  name="username" value={formData.username} onChange={handleChange} placeholder='player' className='date'></input>
         </label>
         <label>
-            Score to Par:
-            <input name="courseTotal" value={formData.courseTotal} onChange={handleChange} className='data'></input>
-          </label>
-          <label>
-            Total Strokes:
-            <input name="strokes" value={formData.strokes} onChange={handleChange} className='data'></input>
-          </label>
-          <label>
-            Total Putts:
-            <input name="putts" value={formData.putts} onChange={handleChange} className='data'></input>
-          </label>
-          <label>
-            Fairways Hit:
-            <input name="fairwaysHit" value={formData.fairwaysHit} onChange={handleChange} className='data'></input>
-          </label>
-          <button id="button" type="submit">Submit Score</button>
-        </form>
-      </div>
+          Score to Par:
+          <input name="courseTotal" value={ formData.courseTotal } onChange={ handleChange } className='data'></input>
+        </label>
+        <label>
+          Total Strokes:
+          <input name="strokes" value={ formData.strokes } onChange={ handleChange } className='data'></input>
+        </label>
+        <label>
+          Total Putts:
+          <input name="putts" value={ formData.putts } onChange={ handleChange } className='data'></input>
+        </label>
+        <label>
+          Fairways Hit:
+          <input name="fairwaysHit" value={ formData.fairwaysHit } onChange={ handleChange } className='data'></input>
+        </label>
+        <button id="button" type="submit">Submit Score</button>
+      </form>
+    </div>
   )
 }
 

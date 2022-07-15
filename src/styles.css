@@ -1,7 +1,7 @@
 body {
   background-image: url('http://www.sppa.com/wp-content/uploads/golf-green2.png');
   background-size: 100%;
-  color: white
+  color: white;
 }
 
 #pin_image {
@@ -126,4 +126,33 @@ select {
 
 .round_button {
   border-radius: 20em;
+}
+
+.modal {
+  background-color: rgb(80, 188, 46);
+  width: 600px;
+  border: solid black;
+  position: fixed;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 50%;
+}
+
+.fade, .onshow, .modal, .view {
+  width: 400px;
+}
+
+.onshow {
+  text-align: center;
+}
+
+.modal-body {
+  text-align: center;
+  margin-left: 10%;
+}
+
+.modal_th {
+  white-space: nowrap;
+  padding: 10px;
 }
