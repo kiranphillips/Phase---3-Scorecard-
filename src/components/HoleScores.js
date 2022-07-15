@@ -4,14 +4,14 @@ import Rounds from './Rounds'
 function HoleScores () {
 
 
-  const [ formData, setFormData] = useState({
-        course_name: "",
-        round_date: "",
-        username: "",
-        score_to_par: "",
-        strokes: "",
-        total_putts: "",
-        fairways_hit: "",
+  const [ formData, setFormData ] = useState({
+    course_name: "",
+    round_date: "",
+    username: "",
+    score_to_par: "",
+    strokes: "",
+    total_putts: "",
+    fairways_hit: "",
 
   })
 
