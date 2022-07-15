@@ -8,9 +8,8 @@ function Rounds () {
     <div>
       <RoundsContainer />
       <Link to='/'>
-      <button id="router_button">Back</button>
+        <button id="router_button">Back</button>
       </Link>
-  )
     </div>
   )
 }
