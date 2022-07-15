@@ -41,6 +41,7 @@ body {
 
 #button {
   text-align: center;
+  text-decoration: none;
 }
 
 th {
@@ -71,6 +72,9 @@ select {
   display: block;
   margin: auto;
 }
+a, a:hover, a:focus, a:active {
+  text-decoration: none;
+}
 
 #router_button {
   display: flex;
@@ -93,6 +97,7 @@ select {
   user-select: none;
   -webkit-user-select: none;
   touch-action: manipulation;
+  text-decoration: none;
 }
 
 #router_button:hover {
