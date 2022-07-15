@@ -146,7 +146,7 @@ a, a:hover, a:focus, a:active {
 
 .fade, .onshow, .modal, .view {
   width: 700px;
-  font-size: small;
+  font-size: medium;
 }
 
 .onshow {

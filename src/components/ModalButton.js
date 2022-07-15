@@ -41,35 +41,42 @@ function ModalButton ({ scores, player }) {
   // const [ stats, setStats ] = useState(tracker)
   // console.log(stats);
 
+  // if (score.id === id)
+  //    return (
+
+  //)
+
+
   const handleClose = () => setShow(false);
   const handleShow = () => {
     setShow(true);
   }
 
-  const renderScores = scores.map((score) =>
-    <table>
-      <tbody>
-        <tr>
-          <th className='modal_th'>Round Date</th>
-          <th className='modal_th'>Course Name</th>
-          <th className='modal_th'>Total Strokes</th>
-          <th className='modal_th'>Score to Par</th>
-          <th className='modal_th'>Total Putts</th>
-          <th className='modal_th'>Fairways Hit</th>
-          <th className='modal_th'>Player ID</th>
-        </tr>
-        <tr>
-          <td>{ score.round_date }</td>
-          <td>{ score.course_name }</td>
-          <td>{ score.strokes }</td>
-          <td>{ score.score_to_par }</td>
-          <td>{ score.total_putts }</td>
-          <td>{ score.fairways_hit }</td>
-          <td>{ score.player_id }</td>
-        </tr>
-      </tbody>
-    </table>
-  )
+  const renderScores = scores.map((score) => {
+    if (score.player_id === id)
+      return (
+        <table>
+          <tbody>
+            <tr>
+              <th className='modal_th'>Round Date</th>
+              <th className='modal_th'>Course Name</th>
+              <th className='modal_th'>Total Strokes</th>
+              <th className='modal_th'>Score to Par</th>
+              <th className='modal_th'>Total Putts</th>
+              <th className='modal_th'>Fairways Hit</th>
+            </tr>
+            <tr>
+              <td>{ score.round_date }</td>
+              <td>{ score.course_name }</td>
+              <td>{ score.strokes }</td>
+              <td>{ score.score_to_par }</td>
+              <td>{ score.total_putts }</td>
+              <td>{ score.fairways_hit }</td>
+            </tr>
+          </tbody>
+        </table>
+      )
+  })
 
   return (
     <>
