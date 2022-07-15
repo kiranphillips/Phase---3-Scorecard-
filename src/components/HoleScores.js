@@ -3,17 +3,21 @@ import Rounds from './Rounds'
 
 function HoleScores ({ onAddRound }) {
 
-  const [ formData, setFormData ] = useState({
-    course_name: "",
-    round_date: "",
-    score_to_par: "",
-    strokes: "",
-    total_putts: "",
-    fairways_hit: "",
+  const [ formData, setFormData] = useState({
+        course_name: "",
+        round_date: "",
+        username: "",
+        score_to_par: "",
+        strokes: "",
+        total_putts: "",
+        fairways_hit: "",
+
 
   })
 
-  function handleChange (e) {
+function handleChange(e) {
+    console.log(formData.username)
+
     setFormData({
       ...formData,
       [ e.target.name ]: e.target.value
@@ -23,24 +27,30 @@ function HoleScores ({ onAddRound }) {
   function handleSubmit (e) {
     e.preventDefault();
 
-    const newRound = {
-      course_name: formData.courseName,
-      round_date: formData.roundDate,
-      score_to_par: formData.courseTotal,
-      strokes: formData.strokes,
-      total_putts: formData.putts,
-      fairways_hit: formData.fairwaysHit,
+    const new_player = {
+        username: formData.username
     }
+
+    const newRound = {
+        course_name: formData.courseName,
+        round_date: formData.roundDate,
+        score_to_par: formData.courseTotal,
+        strokes: formData.strokes,
+        total_putts: formData.putts,
+        fairways_hit: formData.fairwaysHit,
+        username: formData.username
+      }
 
 
     fetch("http://localhost:9292/score_totals", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
+        "Accept": "application/json"
       },
-      body: JSON.stringify(newRound),
+      body: JSON.stringify(newRound)
     })
-      .then((r) => r.json())
+    //   .then((r) => r.json())
   }
 
 
@@ -52,6 +62,9 @@ function HoleScores ({ onAddRound }) {
         </label>
         <label>Date:
           <input name="roundDate" value={ formData.roundDate } onChange={ handleChange } placeholder='mm/dd/yyyy' className='date'></input>
+        </label>
+        <label>Player:
+          <input  name="username" value={formData.username} onChange={handleChange} placeholder='player' className='date'></input>
         </label>
         <label>
           Score to Par:
