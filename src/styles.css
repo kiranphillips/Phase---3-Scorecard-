@@ -117,10 +117,10 @@ a, a:hover, a:focus, a:active {
 
 #player_table {
   margin: auto;
+  margin-top: 5px;
   table-layout: fixed;
   width: 100%;
-  border-collapse: collapse;
-  border: 3px solid rgb(255, 0, 0);
+  border: 2px solid rgb(0, 0, 0);
   text-align: center;
 }
 .content_row {
@@ -145,7 +145,8 @@ a, a:hover, a:focus, a:active {
 }
 
 .fade, .onshow, .modal, .view {
-  width: 400px;
+  width: 700px;
+  font-size: small;
 }
 
 .onshow {
@@ -154,7 +155,7 @@ a, a:hover, a:focus, a:active {
 
 .modal-body {
   text-align: center;
-  margin-left: 10%;
+
 }
 
 .modal_th {

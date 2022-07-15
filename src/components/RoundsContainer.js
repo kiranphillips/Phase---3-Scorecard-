@@ -11,18 +11,18 @@ function RoundsContainer () {
       .then((players) => setPlayers(players));
   }, []);
 
-  console.log(players)
+  // console.log(players)
 
   const playerInfo = players.map((player) =>
     <PlayerData
-    key={player.id}
-    player={player} 
+      key={ player.id }
+      player={ player }
     />
   )
 
   return (
     <div id="rounds_div">
-      {playerInfo}
+      { playerInfo }
     </div>
   )
 }
