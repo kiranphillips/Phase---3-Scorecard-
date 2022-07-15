@@ -19,13 +19,10 @@ function App () {
     <div>
       <Header />
       <Routes>
-
         <Route path="/" element={ <ScoreCard /> } />
         <Route path="/rounds" element={ <Rounds /> } />
       </Routes>
       <RouterButton />
-      <Rounds 
-      />
     </div>
   );
 }
