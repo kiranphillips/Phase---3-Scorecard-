@@ -7,8 +7,7 @@ function RouterButton () {
 
   return (
     <Link to='/rounds'>
-      <button onClick={() => setShow(prev => !prev)} id="router_button">View All Rounds</button>
-      {show && <box><RouterButton/></box>}
+      <button id="router_button">View All Rounds</button>
     </Link>
   )
 }
