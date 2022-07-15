@@ -3,6 +3,7 @@ import Rounds from './Rounds'
 
 function HoleScores () {
 
+
   const [ formData, setFormData] = useState({
         course_name: "",
         round_date: "",
@@ -11,9 +12,10 @@ function HoleScores () {
         strokes: "",
         total_putts: "",
         fairways_hit: "",
+
   })
 
-function handleChange(e) {
+  function handleChange (e) {
     console.log(formData.username)
 
     setFormData({
@@ -25,15 +27,16 @@ function handleChange(e) {
   function handleSubmit (e) {
     e.preventDefault();
 
+
     const newRound = {
-        course_name: formData.courseName,
-        round_date: formData.roundDate,
-        score_to_par: formData.courseTotal,
-        strokes: formData.strokes,
-        total_putts: formData.putts,
-        fairways_hit: formData.fairwaysHit,
-        username: formData.username
-      }
+      course_name: formData.courseName,
+      round_date: formData.roundDate,
+      score_to_par: formData.courseTotal,
+      strokes: formData.strokes,
+      total_putts: formData.putts,
+      fairways_hit: formData.fairwaysHit,
+      username: formData.username
+    }
 
     fetch("http://localhost:9292/score_totals", {
       method: "POST",
@@ -48,15 +51,17 @@ function handleChange(e) {
   return (
     <div id='score_form'>
       <form onSubmit={ handleSubmit }>
-        <label>Golf Course Name:
-          <input name="courseName" value={ formData.courseName } onChange={ handleChange } placeholder='Enter Course Name' className='course'></input>
-        </label>
-        <label>Date:
-          <input name="roundDate" value={ formData.roundDate } onChange={ handleChange } placeholder='mm/dd/yyyy' className='date'></input>
-        </label>
-        <label>Player:
-          <input  name="username" value={formData.username} onChange={handleChange} placeholder='player' className='date'></input>
-        </label>
+        <div className='entry_data'>
+          <label >Golf Course Name:
+            <input name="courseName" value={ formData.courseName } onChange={ handleChange } placeholder='Enter Course Name' className='course'></input>
+          </label>
+          <label>Date:
+            <input name="roundDate" value={ formData.roundDate } onChange={ handleChange } placeholder='mm/dd/yyyy' className='date'></input>
+          </label>
+          <label>Player:
+            <input name="username" value={ formData.username } onChange={ handleChange } placeholder='player' className='date'></input>
+          </label>
+        </div>
         <label>
           Score to Par:
           <input name="courseTotal" value={ formData.courseTotal } onChange={ handleChange } className='data'></input>
