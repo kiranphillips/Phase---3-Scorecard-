@@ -2,9 +2,8 @@ import React, { useState, useEffect } from 'react';
 import Modal from 'react-bootstrap/Modal'
 import Button from 'react-bootstrap/Button';
 
-function ModalButton ({ scores, player }) {
+function ModalButton ({ scores, player, onScoreDelete }) {
   const [ show, setShow ] = useState(false);
-  const { score_to_par, strokes, total_putts, course_name, round_date, fairways_hit, } = scores
   const { id, username } = player
 
   // console.log(scores)
@@ -47,13 +46,22 @@ function ModalButton ({ scores, player }) {
   //)
 
 
+
   const handleClose = () => setShow(false);
   const handleShow = () => {
     setShow(true);
   }
 
   const renderScores = scores.map((score) => {
-    if (score.player_id === id)
+    const { id, score_to_par, strokes, total_putts, course_name, round_date, fairways_hit, } = score
+    function handleDeleteClick() {
+      fetch(`http://localhost:9292/score_totals/${id}`, {
+        method: "DELETE",
+      });
+      console.log(id)
+      onScoreDelete(id);
+    }
+    if (score.player_id === player.id)
       return (
         <table>
           <tbody>
@@ -66,14 +74,15 @@ function ModalButton ({ scores, player }) {
               <th className='modal_th'>Fairways Hit</th>
             </tr>
             <tr>
-              <td>{ score.round_date }</td>
-              <td>{ score.course_name }</td>
-              <td>{ score.strokes }</td>
-              <td>{ score.score_to_par }</td>
-              <td>{ score.total_putts }</td>
-              <td>{ score.fairways_hit }</td>
+              <td>{ round_date }</td>
+              <td>{ course_name }</td>
+              <td>{ strokes }</td>
+              <td>{ score_to_par }</td>
+              <td>{ total_putts }</td>
+              <td>{ fairways_hit }</td>
             </tr>
           </tbody>
+          <button key={id} className='round_button' onClick={handleDeleteClick}>delete</button>
         </table>
       )
   })

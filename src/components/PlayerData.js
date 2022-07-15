@@ -15,6 +15,11 @@ function PlayerData ({player}) {
   // ==================================================
 
 
+  function handleDeleteScore(id) {
+    const updatedScores = scores.filter((score) => score.id !== id);
+    setScores(updatedScores);
+  }
+
   return (
     <div>
       <table id="player_table">
@@ -25,7 +30,7 @@ function PlayerData ({player}) {
           </tr>
           <tr className='player_rows'>
             <td>{username}</td>
-            <td><ModalButton scores={scores} player={player}/><button className='round_button'>delete</button></td>
+            <td><ModalButton scores={scores} player={player} onScoreDelete = {handleDeleteScore}/></td>
           </tr>
         </thead>
       </table>
