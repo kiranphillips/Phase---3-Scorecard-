@@ -1,17 +1,17 @@
 import { useState, useEffect } from 'react'
 import Rounds from './Rounds'
 
-function HoleScores ({ onAddRound }) {
+function HoleScores () {
 
-  const [ formData, setFormData ] = useState({
-    course_name: "",
-    round_date: "",
-    username: "",
-    score_to_par: "",
-    strokes: "",
-    total_putts: "",
-    fairways_hit: "",
 
+  const [ formData, setFormData] = useState({
+        course_name: "",
+        round_date: "",
+        username: "",
+        score_to_par: "",
+        strokes: "",
+        total_putts: "",
+        fairways_hit: "",
 
   })
 
@@ -27,9 +27,6 @@ function HoleScores ({ onAddRound }) {
   function handleSubmit (e) {
     e.preventDefault();
 
-    const new_player = {
-      username: formData.username
-    }
 
     const newRound = {
       course_name: formData.courseName,
@@ -41,7 +38,6 @@ function HoleScores ({ onAddRound }) {
       username: formData.username
     }
 
-
     fetch("http://localhost:9292/score_totals", {
       method: "POST",
       headers: {
@@ -50,9 +46,7 @@ function HoleScores ({ onAddRound }) {
       },
       body: JSON.stringify(newRound)
     })
-    //   .then((r) => r.json())
   }
-
 
   return (
     <div id='score_form'>

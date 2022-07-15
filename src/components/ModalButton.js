@@ -4,8 +4,9 @@ import Button from 'react-bootstrap/Button';
 
 function ModalButton ({ scores }) {
   const [ show, setShow ] = useState(false);
-  const { score_to_par, strokes, total_putts, course_name, round_date } = scores
-  // console.log(scores);
+  const { score_to_par, strokes, total_putts, course_name, round_date, fairways_hit,} = scores
+
+  console.log(scores)
   // console.log(scores[ 0 ].score_to_par)
 
   // const totalStrokes = scores.map(score => <td>{ score.strokes }</td>)
@@ -63,14 +64,20 @@ function ModalButton ({ scores }) {
           <table>
             <tbody>
               <tr>
-                <th className='modal_th'>Total Par</th>
+                <th className='modal_th'>Round Date</th>
+                <th className='modal_th'>Course Name</th>
                 <th className='modal_th'>Total Strokes</th>
+                <th className='modal_th'>Score to Par</th>
                 <th className='modal_th'>Total Putts</th>
+                <th className='modal_th'>Fairways Hit</th>
               </tr>
               <tr>
-                <td>{ scores[ 0 ]?.score_to_par }</td>
-                <td>{ scores[ 0 ]?.strokes }</td>
-                <td>{ scores[ 0 ]?.total_putts }</td>
+                <td>{ round_date }</td>
+                <td>{ course_name }</td>
+                <td>{ strokes }</td>
+                <td>{ score_to_par }</td>
+                <td>{ total_putts }</td>
+                <td>{ fairways_hit }</td>
               </tr>
             </tbody>
           </table>
