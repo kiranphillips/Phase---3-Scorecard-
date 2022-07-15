@@ -6,10 +6,6 @@ function LogIn () {
           Username:
           <input></input>
         </label>
-        <label>
-          Password:
-          <input></input>
-        </label>
         <button className='login_button' type="submit">Login</button>
       </form>
     </div>

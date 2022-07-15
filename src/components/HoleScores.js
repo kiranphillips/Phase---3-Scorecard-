@@ -6,6 +6,7 @@ function HoleScores ( {onAddRound} ) {
   const [ formData, setFormData] = useState({
         course_name: "",
         round_date: "",
+        username: "",
         score_to_par: "",
         strokes: "",
         total_putts: "",
@@ -14,6 +15,7 @@ function HoleScores ( {onAddRound} ) {
 })
 
 function handleChange(e) {
+    console.log(formData.username)
     setFormData({
         ...formData,
         [e.target.name]: e.target.value
@@ -23,6 +25,10 @@ function handleChange(e) {
   function handleSubmit(e) {
     e.preventDefault();
 
+    const new_player = {
+        username: formData.username
+    }
+
     const newRound = {
         course_name: formData.courseName,
         round_date: formData.roundDate,
@@ -30,6 +36,7 @@ function handleChange(e) {
         strokes: formData.strokes,
         total_putts: formData.putts,
         fairways_hit: formData.fairwaysHit,
+        username: formData.username
       }
 
 
@@ -37,10 +44,11 @@ function handleChange(e) {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
+        "Accept": "application/json"
       },
-      body: JSON.stringify(newRound),
+      body: JSON.stringify(newRound)
     })
-      .then((r) => r.json())
+    //   .then((r) => r.json())
   }
 
 
@@ -52,6 +60,9 @@ function handleChange(e) {
         </label>
         <label>Date:
           <input  name="roundDate" value={formData.roundDate} onChange={handleChange} placeholder='mm/dd/yyyy' className='date'></input>
+        </label>
+        <label>Player:
+          <input  name="username" value={formData.username} onChange={handleChange} placeholder='player' className='date'></input>
         </label>
         <label>
             Score to Par:
