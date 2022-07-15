@@ -25,7 +25,7 @@ function PlayerData ({player}) {
           </tr>
           <tr className='player_rows'>
             <td>{username}</td>
-            <td><ModalButton scores={scores}/><button className='round_button'>delete</button></td>
+            <td><ModalButton scores={scores} player={player}/><button className='round_button'>delete</button></td>
           </tr>
         </thead>
       </table>

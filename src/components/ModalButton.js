@@ -2,9 +2,10 @@ import React, { useState, useEffect } from 'react';
 import Modal from 'react-bootstrap/Modal'
 import Button from 'react-bootstrap/Button';
 
-function ModalButton ({ scores }) {
+function ModalButton ({ scores, player }) {
   const [ show, setShow ] = useState(false);
   const { score_to_par, strokes, total_putts, course_name, round_date, fairways_hit,} = scores
+  const {id, username} = player
 
   console.log(scores)
   // console.log(scores[ 0 ].score_to_par)
@@ -72,7 +73,7 @@ function ModalButton ({ scores }) {
 
   return (
     <>
-      <Button className="round_button" variant="primary" onClick={ handleShow }>
+      <Button key={id} className="round_button" variant="primary" onClick={ handleShow }>
         View
       </Button>
 
