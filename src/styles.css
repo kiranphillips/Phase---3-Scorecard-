@@ -1,7 +1,21 @@
-body {
-  background-image: url('http://www.sppa.com/wp-content/uploads/golf-green2.png');
-  background-size: 100%;
-  color: white;
+body, html {
+  color: #00442d;
+  background-color: #9ed5ac;
+  height: 100%;
+  
+}
+
+.bg-image {
+  /* background-image: url('https://images.alphacoders.com/292/thumb-1920-292381.jpg'); */
+  height: 100%;
+  background-color: #9ed5ac;
+
+  /* filter: blur(8px);
+  -webkit-filter: blur(8px); */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
 }
 
 #pin_image {
@@ -21,13 +35,14 @@ body {
 }
 
 #score_form {
-  border: 2px solid red;
+  border: 2px solid #a74c5c;
+  border-radius: 2%;
   height: 210px;
   width: 580px;
   margin-left: auto;
   margin-right: auto;
   margin-top: 5%;
-  color: black;
+  color: #003e4e;
   text-align: center;
 }
 
@@ -36,12 +51,14 @@ body {
   text-align: center;
   margin: 1.5px;
   border-radius: 25%;
-  border: 1px solid black;
+  border: 1px solid #003e4e;
 }
 
 #button {
   text-align: center;
   margin-top: 10px;
+  background-color: #bacfc0;
+  border-radius: 10%;
 }
 
 th {
@@ -80,7 +97,7 @@ a, a:hover, a:focus, a:active {
   display: flex;
   margin-left: auto;
   margin-right: auto;
-  margin-top: 10%;
+  margin-top: 5%;
   align-items: center;
   font-family: inherit;
   font-weight: 500;
@@ -88,11 +105,11 @@ a, a:hover, a:focus, a:active {
   padding: 0.7em 1.4em 0.7em 1.1em;
   color: white;
   background: #ad5389;
-  background: linear-gradient(0deg, rgb(21, 129, 51) 0%, rgb(110, 225, 119) 100%);
+  background: #258c46;
   border: none;
-  box-shadow: 0 1em 1.5em -0.5em #14a73e98;
+  box-shadow: 0 1em 1.5em -0.5em #258c46;
   letter-spacing: 0.05em;
-  border-radius: 20em;
+  border-radius: 2%;
   cursor: pointer;
   user-select: none;
   -webkit-user-select: none;

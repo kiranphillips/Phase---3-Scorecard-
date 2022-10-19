@@ -3,7 +3,7 @@ import LogIn from './LogIn';
 function Header () {
   return (
     <div id="header">
-      <h1>Whack Fuck!</h1>
+      <h1>My Golf Scores!</h1>
     </div>
   )
 

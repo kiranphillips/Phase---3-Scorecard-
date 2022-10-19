@@ -7,7 +7,7 @@ import Rounds from "./Rounds";
 function App () {
 
   return (
-    <div>
+    <div class="bg-image">
       <Header />
       <Routes>
         <Route path="/" element={ <ScoreCard /> } />
