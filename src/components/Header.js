@@ -1,4 +1,4 @@
-import LogIn from './LogIn';
+import Login from './Login';
 
 function Header () {
   return (

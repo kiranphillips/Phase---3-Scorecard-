@@ -1,4 +1,4 @@
-function LogIn () {
+function Login () {
   return (
     <div id="login_form">
       <form>
@@ -12,4 +12,4 @@ function LogIn () {
   )
 };
 
-export default LogIn
+export default Login
